@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LeagueMatchHistory")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Interface for Riot Games League of Legends Match History")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LeagueMatchHistory")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("da.viddiaz.com")]
+[assembly: AssemblyProduct("LeagueMatchHistory.Properties")]
+[assembly: AssemblyCopyright("Copyright (c) 2013-2014, Snowl (David Diaz - d@viddiaz.com)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("53969706-a80c-472f-a286-55e39b6960b2")]
+[assembly: Guid("45f7488e-1480-455c-b1ba-9578edc5bb93")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -29,8 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
