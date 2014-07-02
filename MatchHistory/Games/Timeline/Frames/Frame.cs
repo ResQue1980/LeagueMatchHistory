@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LeagueMatchHistory.MatchHistory.Games.Timeline.Frames
+{
+    public class Frame
+    {
+        public ParticipantFrames participantFrames;
+        public List<EventFrame> events;
+        public int timestamp;
+    }
+}
