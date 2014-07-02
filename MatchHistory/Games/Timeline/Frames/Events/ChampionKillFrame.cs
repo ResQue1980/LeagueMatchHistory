@@ -4,8 +4,6 @@ namespace LeagueMatchHistory.MatchHistory.Games.Timeline.Frames.Events
 {
     public class ChampionKillFrame : EventFrame
     {
-        public string type;
-        public int timestamp;
         public Position position;
         public int killerId;
         public int victimId;

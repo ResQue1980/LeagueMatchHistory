@@ -62,7 +62,11 @@ namespace LeagueMatchHistory.MatchHistory
                 {
                     if ("WARD_PLACED" == (string)dictionary["type"])
                     {
-                        return GetTypeFromDictionary<WardFrame>(dictionary, serializer);
+                        return GetTypeFromDictionary<WardPlacedFrame>(dictionary, serializer);
+                    }
+                    else if ("WARD_KILL" == (string)dictionary["type"])
+                    {
+                        return GetTypeFromDictionary<WardKillFrame>(dictionary, serializer);
                     }
                     else if ("ELITE_MONSTER_KILL" == (string)dictionary["type"])
                     {
@@ -77,6 +81,9 @@ namespace LeagueMatchHistory.MatchHistory
                         return GetTypeFromDictionary<BuildingKillFrame>(dictionary, serializer);
                     }
                 }
+
+                //Unknown type?
+                return obj;
             }
 
             return null;
