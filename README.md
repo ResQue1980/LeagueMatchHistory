@@ -16,3 +16,5 @@ PlayerListGames games = await history.GetGamesAsync(acc);
 Game game = await history.GetFullGameDataAsync(games.games.games[0]); //lol riot
 IndepthTimeline timeline = await history.GetGameTimelineAsync(games.games.games[0]);
 ```
+
+Note that the region is the original region of the player (this can be retrieved through RTMPS).

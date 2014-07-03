@@ -32,26 +32,13 @@ namespace LeagueMatchHistory.MatchHistory
             if (type == typeof(ParticipantFrames))
             {
                 var obj = new ParticipantFrames();
-                if (dictionary.ContainsKey("1"))
-                    obj.one = serializer.ConvertToType<ParticipantFrame>(dictionary["1"]);
-                if (dictionary.ContainsKey("2"))
-                    obj.two = serializer.ConvertToType<ParticipantFrame>(dictionary["2"]);
-                if (dictionary.ContainsKey("3"))
-                    obj.three = serializer.ConvertToType<ParticipantFrame>(dictionary["3"]);
-                if (dictionary.ContainsKey("4"))
-                    obj.four = serializer.ConvertToType<ParticipantFrame>(dictionary["4"]);
-                if (dictionary.ContainsKey("5"))
-                    obj.five = serializer.ConvertToType<ParticipantFrame>(dictionary["5"]);
-                if (dictionary.ContainsKey("6"))
-                    obj.six = serializer.ConvertToType<ParticipantFrame>(dictionary["6"]);
-                if (dictionary.ContainsKey("7"))
-                    obj.seven = serializer.ConvertToType<ParticipantFrame>(dictionary["7"]);
-                if (dictionary.ContainsKey("8"))
-                    obj.eight = serializer.ConvertToType<ParticipantFrame>(dictionary["8"]);
-                if (dictionary.ContainsKey("9"))
-                    obj.nine = serializer.ConvertToType<ParticipantFrame>(dictionary["9"]);
-                if (dictionary.ContainsKey("10"))
-                    obj.ten = serializer.ConvertToType<ParticipantFrame>(dictionary["10"]);
+
+                obj.frames = new List<ParticipantFrame>();
+                foreach (KeyValuePair<string, object> pair in dictionary)
+                {
+                    obj.frames.Add(serializer.ConvertToType<ParticipantFrame>(pair.Value));
+                }
+
                 return obj;
             }
 
@@ -119,19 +106,12 @@ namespace LeagueMatchHistory.MatchHistory
             var partFrames = obj as ParticipantFrames;
             if (partFrames != null)
             {
-                return new Dictionary<string, object>
+                Dictionary<string, object> frames = new Dictionary<string, object>();
+                for (int i = 0; i < partFrames.frames.Count; i++)
                 {
-                    {"1", partFrames.one },
-                    {"2", partFrames.two },
-                    {"3", partFrames.three },
-                    {"4", partFrames.four },
-                    {"5", partFrames.five },
-                    {"6", partFrames.six },
-                    {"7", partFrames.seven },
-                    {"8", partFrames.eight },
-                    {"9", partFrames.nine },
-                    {"10", partFrames.ten }
-                };
+                    frames.Add((i - 1).ToString(), partFrames.frames[i]);
+                }
+                return frames;
             }
             return new Dictionary<string, object>();
         }
